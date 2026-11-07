@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f0917" />
+    <meta name="description"
+          content="El pick del día, gratis y sin humo. Análisis, cuota, condiciones y stake sugerido para tus apuestas deportivas. Solo +18." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:title" content="Pick Diario — El pick del día, sin humo" />
+    <meta property="og:description"
+          content="Un pick gratuito cada día con su análisis, condiciones exactas y stake sugerido. Sin promesas de dinero fácil. +18." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pick Diario — El pick del día, sin humo" />
+    <meta name="twitter:description"
+          content="Un pick gratuito cada día con su análisis, condiciones exactas y stake sugerido. +18." />
+    <title>Pick Diario — El pick del día, sin humo</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="logo/LogoPesta%C3%B1a.png?v=4" />
+    <link rel="shortcut icon" type="image/png" href="logo/LogoPesta%C3%B1a.png?v=4" />
+    <link rel="apple-touch-icon" href="logo/LogoPesta%C3%B1a.png?v=4" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=5" />
+    <style>
+        .deco {
+            position: absolute;
+            z-index: 0;
+            display: none;
+            width: clamp(110px, 9vw, 190px);
+            height: auto;
+            opacity: 0.5;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        main .shell {
+            position: relative;
+            z-index: 1;
+        }
+
+        .promo-1x {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.9rem 1rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.04);
+            text-decoration: none;
+            transition: border-color 0.2s, background 0.2s, transform 0.2s;
+        }
+
+            .promo-1x:hover,
+            .promo-1x:focus-visible {
+                border-color: rgba(138, 255, 60, 0.6);
+                background: rgba(138, 255, 60, 0.07);
+                transform: translateY(-2px);
+            }
+
+            .promo-1x img {
+                height: 48px;
+                width: auto;
+                max-width: 96px;
+                flex-shrink: 0;
+                object-fit: contain;
+            }
+
+        @media (min-width: 1024px) {
+            .deco {
+                display: block;
+            }
+        }
+    </style>
+    <script>
+        document.documentElement.classList.add("js");
+    </script>
+</head>
+
+<body>
+    <a href="#contenido"
+       class="fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-lime px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-ink transition focus:translate-y-0">
+        Saltar al contenido
+    </a>
+
+    <!-- Sprite de iconos -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="hidden" aria-hidden="true">
+        <symbol id="icon-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17 17 7M8 7h9v9" />
+        </symbol>
+        <symbol id="icon-arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v16m-6-6 6 6 6-6" />
+        </symbol>
+        <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12h16m-6-6 6 6-6 6" />
+        </symbol>
+        <symbol id="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="8" width="12" height="12" rx="2" />
+            <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
+        </symbol>
+        <symbol id="icon-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3" />
+            <circle cx="6" cy="12" r="3" />
+            <circle cx="18" cy="19" r="3" />
+            <path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4" />
+        </symbol>
+        <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m5 12 4.5 4.5L19 7" />
+        </symbol>
+        <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+        </symbol>
+        <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <path d="m6 6 12 12M18 6 6 18" />
+        </symbol>
+        <symbol id="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+            <path d="M12 5v14M5 12h14" />
+        </symbol>
+        <symbol id="icon-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 21V4m0 0h10.5l-1.8 3.5L15.5 11H5" />
+        </symbol>
+        <symbol id="icon-corner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 4H8a4 4 0 0 0-4 4v12" />
+            <path d="M12 4v5M4 12h5" />
+            <circle cx="20" cy="20" r="1" fill="currentColor" stroke="none" />
+        </symbol>
+        <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3 2" />
+        </symbol>
+        <symbol id="icon-ball" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9" />
+            <path d="m12 7 3.5 2.6-1.3 4.1h-4.4L8.5 9.6 12 7ZM12 3v4M4.8 9.8l3.7-.2M7.5 19l2.3-3.3M16.5 19l-2.3-3.3M19.2 9.8l-3.7-.2" />
+        </symbol>
+        <symbol id="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8" />
+            <circle cx="12" cy="12" r="3" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+        </symbol>
+        <symbol id="icon-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 20V10m6 10V4m6 16v-7m4 7H2" />
+        </symbol>
+        <symbol id="icon-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 7a2 2 0 0 1 2-2h12v4" />
+            <rect x="4" y="7" width="16" height="12" rx="2" />
+            <path d="M16 12h4v4h-4a2 2 0 0 1 0-4Z" />
+        </symbol>
+        <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3 5 6v5c0 4.5 2.8 8.1 7 10 4.2-1.9 7-5.5 7-10V6l-7-3Z" />
+            <path d="m9 12 2 2 4-4" />
+        </symbol>
+        <symbol id="icon-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3 2.5 20h19L12 3Z" />
+            <path d="M12 9v5M12 17.5v.1" />
+        </symbol>
+        <symbol id="icon-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 3 1.7 5.3L19 10l-5.3 1.7L12 17l-1.7-5.3L5 10l5.3-1.7L12 3Z" />
+        </symbol>
+        <symbol id="icon-telegram" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21.8 3.6c.3-1.2-.7-2-1.8-1.6L2.8 9.1c-1.2.5-1.1 1.7.1 2l4.4 1.4 1.7 5.2c.4 1 .7 1.4 1.6 1.4.6 0 .9-.3 1.3-.7l2.1-2 4.2 3.1c.8.6 1.6.3 1.8-.8l2-15.1ZM8.3 12.1l9.4-5.8c.4-.3.8 0 .5.3l-7.7 7-.3 3.3-1.9-4.8Z" />
+        </symbol>
+        <symbol id="icon-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+        </symbol>
+        <symbol id="icon-tiktok" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.5 3c.4 2.5 1.9 4.2 4.5 4.4v3.2a8.9 8.9 0 0 1-4.4-1.4v6.3a6.1 6.1 0 1 1-5.3-6v3.3a2.8 2.8 0 1 0 2 2.7V3h3.2Z" />
+        </symbol>
+        <symbol id="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.5 3.5A11.8 11.8 0 0 0 12 0 11.9 11.9 0 0 0 1.8 17.8L0 24l6.4-1.7A12 12 0 0 0 12 24a11.9 11.9 0 0 0 8.5-20.5ZM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4A9.9 9.9 0 1 1 12 21.8Zm5.4-7.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.1-.7.2l-1 1.2c-.2.2-.4.3-.7.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.4-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.6 4.9.8.3 1.3.5 1.8.6.8.3 1.5.2 2 .1.6-.1 1.8-.7 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4Z" />
+        </symbol>
+        <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m4 7 8 6 8-6" />
+        </symbol>
+    </svg>
+
+    <!-- Barra superior -->
+    <div class="bg-lime text-ink">
+        <div class="shell flex min-h-9 items-center justify-between gap-4 py-2">
+            <p class="flex items-center gap-2 text-[0.66rem] font-extrabold uppercase tracking-[0.14em]">
+                <span class="h-1.5 w-1.5 animate-pulseSoft rounded-full bg-ink"></span>
+                <span id="topStatus">Pick de hoy disponible</span>
+                <span class="text-ink/45">/</span>
+                <span id="topDate">05 NOV</span>
+            </p>
+            <p class="hidden text-[0.63rem] font-bold uppercase tracking-[0.14em] text-ink/65 sm:block">
+                Análisis gratis · Sin registro · +18
+            </p>
+        </div>
+    </div>
+
+    <!-- Navegación -->
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-ink/90 backdrop-blur-xl">
+        <div class="shell flex min-h-[76px] items-center justify-between gap-6">
+            <a href="#pick" class="group flex items-center" aria-label="Pick Diario, ir al inicio">
+                <img src="logo/Logo.png"
+                     alt="Pick Diario"
+                     class="w-auto transition group-hover:scale-105"
+                     style="height: clamp(3.25rem, 5vw, 4rem)"
+                     height="64" />
+            </a>
+
+            <nav class="hidden items-center gap-7 lg:flex" aria-label="Navegación principal">
+                <a class="nav-link is-active" href="#pick">El pick</a>
+                <a class="nav-link" href="#analisis">Análisis</a>
+                <a class="nav-link" href="#como-funciona">Cómo funciona</a>
+                <a class="nav-link" href="#comunidad">Comunidad</a>
+                <a class="nav-link" href="#faq">Preguntas</a>
+            </nav>
+
+            <div class="flex items-center gap-2.5">
+                <a href="https://t.me/+PYtv12wHqtBhNWM5"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-lime btn-sm hidden sm:inline-flex"
+                   aria-label="Abrir el canal de Telegram en una pestaña nueva">
+                    <svg aria-hidden="true"><use href="#icon-telegram"></use></svg>
+                    Telegram
+                </a>
+                <a href="#ticket" class="btn btn-outline btn-sm hidden xl:inline-flex">
+                    Ver pick
+                    <svg aria-hidden="true"><use href="#icon-arrow-down"></use></svg>
+                </a>
+                <button id="menuToggle"
+                        type="button"
+                        class="icon-btn lg:hidden"
+                        aria-controls="mobileMenu"
+                        aria-expanded="false"
+                        aria-label="Abrir menú de navegación">
+                    <svg id="menuIconOpen" aria-hidden="true"><use href="#icon-menu"></use></svg>
+                    <svg id="menuIconClose" class="hidden" aria-hidden="true"><use href="#icon-close"></use></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden max-h-[calc(100vh-7rem)] overflow-y-auto overscroll-contain border-t border-white/10 bg-ink lg:hidden" aria-hidden="true">
+            <nav class="shell flex flex-col py-4" aria-label="Navegación móvil">
+                <a class="nav-link !min-h-[52px] border-b border-white/[0.07] text-base" href="#pick">El pick de hoy</a>
+                <a class="nav-link !min-h-[52px] border-b border-white/[0.07] text-base" href="#analisis">Análisis</a>
+                <a class="nav-link !min-h-[52px] border-b border-white/[0.07] text-base" href="#deportes">Deportes</a>
+                <a class="nav-link !min-h-[52px] border-b border-white/[0.07] text-base" href="#como-funciona">Cómo funciona</a>
+                <a class="nav-link !min-h-[52px] border-b border-white/[0.07] text-base" href="#comunidad">Comunidad</a>
+                <a class="nav-link !min-h-[52px] border-b border-white/[0.07] text-base" href="#faq">Preguntas frecuentes</a>
+                <div class="mt-4 flex flex-col gap-2.5">
+                    <a href="https://t.me/+PYtv12wHqtBhNWM5"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn btn-lime w-full">
+                        <svg aria-hidden="true"><use href="#icon-telegram"></use></svg>
+                        Entrar al Telegram
+                    </a>
+                    <a href="#ticket" class="btn btn-outline w-full" data-close-menu>
+                        Ver el pick de hoy
+                        <svg aria-hidden="true"><use href="#icon-arrow-down"></use></svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido" tabindex="-1">
+        <!-- Hero -->
+        <section id="pick" class="relative overflow-hidden pb-16 pt-10 sm:pt-14 lg:pb-24 lg:pt-20">
+            <div class="pitch-grid absolute inset-0 -z-10" aria-hidden="true"></div>
+            <div class="hero-glow absolute -right-48 top-0 -z-10 h-[720px] w-[720px] rounded-full" aria-hidden="true"></div>
+            <div class="stadium-arc absolute -right-24 top-28 -z-10 h-[560px] w-[560px] sm:-right-12 lg:right-10" aria-hidden="true"></div>
+            <div class="stadium-arc absolute -right-4 top-48 -z-10 hidden h-[400px] w-[400px] lg:block" aria-hidden="true"></div>
+            <div class="pointer-events-none absolute -left-6 top-10 -z-10 select-none font-display text-[15rem] font-bold leading-none text-white/[0.018] sm:text-[22rem]" aria-hidden="true">
+                90
+            </div>
+
+
+            <img class="deco" src="iconos/FutbolP.png" alt="" aria-hidden="true" decoding="async" style="left:28px;bottom:48px;transform:rotate(-8deg)" />
+            <img class="deco" src="iconos/TenisP.png" alt="" aria-hidden="true" decoding="async" style="right:28px;bottom:70px;transform:rotate(8deg)" />
+
+            <div class="shell">
+                <div class="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10 xl:gap-16">
+                    <div class="max-w-2xl">
+                        <p class="eyebrow reveal">
+                            <span class="eyebrow-line"></span>
+                            Análisis deportivo diario
+                        </p>
+
+                        <h1 class="display-xl reveal mt-5" style="transition-delay: 60ms">
+                            <span class="block">El pick</span>
+                            <span class="text-outline block">del día.</span>
+                            <span class="block italic text-lime">Sin humo.</span>
+                        </h1>
+
+                        <p class="reveal mt-6 max-w-xl text-[0.98rem] leading-7 text-smoke sm:text-lg sm:leading-8" style="transition-delay: 120ms">
+                            Un pick gratuito cada día con su mercado, cuota, <strong class="font-semibold text-cream">condiciones exactas</strong> y análisis.
+                            Sin pronósticos mágicos, sin promesas de dinero fácil. Tú decides si te sirve.
+                        </p>
+
+                        <div class="reveal mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row" style="transition-delay: 180ms">
+                            <a href="#ticket" class="btn btn-lime">
+                                Ver el pick de hoy
+                                <svg aria-hidden="true"><use href="#icon-arrow-down"></use></svg>
+                            </a>
+                            <a href="https://t.me/+PYtv12wHqtBhNWM5"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="btn btn-outline">
+                                <svg aria-hidden="true"><use href="#icon-telegram"></use></svg>
+                                Unirme al Telegram
+                            </a>
+                        </div>
+
+                        <div class="reveal mt-7 flex flex-wrap items-center gap-2" style="transition-delay: 240ms">
+                            <a href="https://wa.me/573146798222?text=Hola%2C%20quiero%20entrar%20al%20VIP"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="social-chip"
+                               aria-label="Entrar al VIP por WhatsApp en una pestaña nueva">
+                                <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                                VIP WhatsApp
+                            </a>
+                            <a href="https://www.tiktok.com/@danw414?_r=1&amp;_t=ZS-9BC2ZJ75r6b"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="social-chip"
+                               aria-label="Abrir TikTok en una pestaña nueva">
+                                <svg aria-hidden="true"><use href="#icon-tiktok"></use></svg>
+                                TikTok
+                            </a>
+                        </div>
+
+                        <div class="reveal mt-7" style="transition-delay: 270ms">
+                            <a href="https://tinyurl.com/1xbetRegistrateBonoBienvenida"
+                               target="_blank"
+                               rel="sponsored noopener noreferrer"
+                               class="promo-1x group"
+                               aria-label="Regístrate en 1xBet y obtén un bono del 100% en tu primera recarga (se abre en una pestaña nueva)">
+                                <img src="logo/1x.png" alt="1xBet" />
+                                <span class="min-w-0 flex-1">
+                                    <span class="block text-[0.58rem] font-extrabold uppercase tracking-[0.16em] text-lime">Bono de bienvenida</span>
+                                    <span class="mt-1 block text-[0.82rem] font-bold leading-5 text-cream">Regístrate y obtén un bono del 100% en la cantidad de tu primera recarga</span>
+                                </span>
+                                <svg class="h-5 w-5 shrink-0 text-lime" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg>
+                            </a>
+                            <p class="mt-2 text-[0.6rem] leading-4 text-smoke">+18 · Publicidad. Aplican términos y condiciones de 1xBet. Juega con responsabilidad.</p>
+                        </div>
+
+                        <div class="reveal mt-7 flex items-start gap-3 border-l border-lime/30 pl-4" style="transition-delay: 300ms">
+                            <span class="mt-0.5 rounded border border-white/15 px-1.5 py-0.5 text-[0.6rem] font-extrabold tracking-wider text-cream/70">+18</span>
+                            <p class="text-[0.72rem] leading-5 text-smoke">
+                                Las apuestas conllevan riesgo. Este contenido es informativo y no garantiza resultados.
+                                <a href="#faq" class="font-semibold text-cream/80 underline decoration-white/25 underline-offset-2 hover:text-lime">Lee las reglas</a>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Ticket del día -->
+                    <div class="reveal relative mx-auto w-full max-w-[570px] lg:rotate-[1.15deg] lg:transition-transform lg:duration-500 lg:hover:rotate-0" style="transition-delay: 160ms">
+                        <div class="absolute -inset-8 -z-10 rounded-full bg-lime/[0.055] blur-3xl" aria-hidden="true"></div>
+                        <article id="ticket" class="ticket overflow-visible" aria-labelledby="pickSelection">
+                            <div class="flex items-center justify-between gap-3 border-b border-ink/10 px-5 py-3.5 sm:px-7">
+                                <div>
+                                    <p class="text-[0.6rem] font-extrabold uppercase tracking-[0.2em] text-ink/60">Pick del día</p>
+                                    <p id="pickDate" class="mt-0.5 font-display text-lg font-semibold uppercase leading-none tracking-wide text-ink sm:text-xl">
+                                        Jueves, 5 de noviembre
+                                    </p>
+                                </div>
+                                <span id="pickStatus" class="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-ink px-2.5 py-1.5 text-[0.56rem] font-extrabold uppercase tracking-[0.12em] text-lime">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-lime"></span>
+                                    Publicado hoy
+                                </span>
+                            </div>
+
+                            <div class="px-5 pt-5 sm:px-7 sm:pt-6">
+                                <div class="flex items-center justify-between gap-3 text-[0.63rem] font-bold uppercase tracking-[0.12em] text-ink/65">
+                                    <span id="pickSportCompetition">Fútbol · Liga BetPlay</span>
+                                    <span id="pickKickoffMeta" class="shrink-0 text-right">Hoy · 20:10 COT</span>
+                                </div>
+
+                                <div class="mt-5 grid grid-cols-[1fr_auto_1fr] items-center gap-3 sm:gap-5">
+                                    <div class="flex min-w-0 flex-col items-center text-center">
+                                        <div id="homeCrest" class="team-crest" style="background-color: #2f7d32">
+                                            <span id="homeShort">NAL</span>
+                                        </div>
+                                        <p id="homeName" class="mt-2.5 max-w-[10rem] text-[0.78rem] font-extrabold leading-tight text-ink sm:text-sm">Atlético Nacional</p>
+                                    </div>
+                                    <div class="grid h-9 w-9 place-items-center rounded-full border border-ink/15 font-display text-sm font-bold uppercase text-ink/65">
+                                        VS
+                                    </div>
+                                    <div class="flex min-w-0 flex-col items-center text-center">
+                                        <div id="awayCrest" class="team-crest" style="background-color: #1e3a8a">
+                                            <span id="awayShort">MIL</span>
+                                        </div>
+                                        <p id="awayName" class="mt-2.5 max-w-[10rem] text-[0.78rem] font-extrabold leading-tight text-ink sm:text-sm">Millonarios</p>
+                                    </div>
+                                </div>
+
+                                <div class="pick-panel mt-5 overflow-hidden rounded-2xl p-4 text-cream sm:p-5">
+                                    <div class="flex items-center justify-between gap-3">
+                                        <span class="text-[0.6rem] font-extrabold uppercase tracking-[0.18em] text-lime">El pick</span>
+                                        <span id="pickBetType" class="rounded-full border border-white/15 px-2 py-1 text-[0.55rem] font-bold uppercase tracking-wider text-cream/65">
+                                            Combinada
+                                        </span>
+                                    </div>
+                                    <div class="mt-2 flex items-end justify-between gap-4">
+                                        <div class="min-w-0">
+                                            <h2 id="pickSelection" class="font-display text-[2.15rem] font-semibold uppercase leading-[0.92] tracking-[-0.015em] sm:text-[2.65rem]">
+                                                Atlético Nacional
+                                            </h2>
+                                            <p id="pickMarket" class="mt-1 text-[0.78rem] font-medium leading-5 text-cream/60">Gana en el tiempo reglamentario</p>
+                                        </div>
+                                        <div class="shrink-0 text-right">
+                                            <span id="pickOdds" class="font-display text-[2.6rem] font-bold leading-none text-lime sm:text-5xl">3.10</span>
+                                            <p class="mt-0.5 text-[0.55rem] font-bold uppercase tracking-[0.16em] text-cream/60">Cuota ref.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <div class="mb-2 flex items-center justify-between gap-3">
+                                        <p class="text-[0.6rem] font-extrabold uppercase tracking-[0.16em] text-ink/60">Condiciones</p>
+                                        <p class="text-[0.55rem] font-semibold text-ink/60">Todas deben cumplirse</p>
+                                    </div>
+                                    <ul id="ticketConditions" class="grid grid-cols-1 gap-2 min-[420px]:grid-cols-2">
+                                        <li class="condition-card">
+                                            <span class="condition-icon"><svg aria-hidden="true"><use href="#icon-flag"></use></svg></span>
+                                            <div>
+                                                <p class="text-[0.55rem] font-extrabold uppercase tracking-[0.12em] text-ink/60">Resultado</p>
+                                                <p class="mt-0.5 text-[0.7rem] font-bold leading-4 text-ink">Nacional gana en los 90 minutos</p>
+                                            </div>
+                                        </li>
+                                        <li class="condition-card">
+                                            <span class="condition-icon"><svg aria-hidden="true"><use href="#icon-corner"></use></svg></span>
+                                            <div>
+                                                <p class="text-[0.55rem] font-extrabold uppercase tracking-[0.12em] text-ink/60">Córners</p>
+                                                <p class="mt-0.5 text-[0.7rem] font-bold leading-4 text-ink">Más de 8.5 en el partido</p>
+                                            </div>
+                                        </li>
+                                        <li class="condition-card">
+                                            <span class="condition-icon"><svg aria-hidden="true"><use href="#icon-clock"></use></svg></span>
+                                            <div>
+                                                <p class="text-[0.55rem] font-extrabold uppercase tracking-[0.12em] text-ink/60">Medio tiempo</p>
+                                                <p class="mt-0.5 text-[0.7rem] font-bold leading-4 text-ink">Nacional empata o gana</p>
+                                            </div>
+                                        </li>
+                                        <li class="condition-card">
+                                            <span class="condition-icon"><svg aria-hidden="true"><use href="#icon-ball"></use></svg></span>
+                                            <div>
+                                                <p class="text-[0.55rem] font-extrabold uppercase tracking-[0.12em] text-ink/60">Goles</p>
+                                                <p class="mt-0.5 text-[0.7rem] font-bold leading-4 text-ink">Menos de 3.5 en el partido</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="ticket-seam" aria-hidden="true">
+                                <span class="ticket-notch ticket-notch-left"></span>
+                                <span class="ticket-notch ticket-notch-right"></span>
+                            </div>
+
+                            <div class="px-5 pb-5 sm:px-7">
+                                <div class="flex flex-col gap-2 min-[430px]:flex-row">
+                                    <button id="copyPick" type="button" class="btn btn-ink flex-1 !min-h-[44px] !px-3 !text-[0.66rem]">
+                                        <svg aria-hidden="true"><use href="#icon-copy"></use></svg>
+                                        Copiar pick
+                                    </button>
+                                    <button id="sharePick" type="button" class="btn btn-outline flex-1 !min-h-[44px] !border-ink/15 !bg-transparent !px-3 !text-[0.66rem] !text-ink hover:!border-ink/40 hover:!bg-ink/5 hover:!text-ink">
+                                        <svg aria-hidden="true"><use href="#icon-share"></use></svg>
+                                        Compartir
+                                    </button>
+                                    <a href="#analisis" class="btn btn-outline !min-h-[44px] !border-ink/15 !bg-transparent !px-3 !text-[0.66rem] !text-ink hover:!border-ink/40 hover:!bg-ink/5 hover:!text-ink" aria-label="Ver el análisis del pick">
+                                        <svg aria-hidden="true"><use href="#icon-arrow-down"></use></svg>
+                                        Análisis
+                                    </a>
+                                </div>
+                                <div class="mt-4 flex items-end justify-between gap-4">
+                                    <div>
+                                        <p class="text-[0.54rem] font-extrabold uppercase tracking-[0.16em] text-ink/60">ID del pick</p>
+                                        <p id="ticketId" class="mt-0.5 font-mono text-[0.62rem] font-bold text-ink/65">PD-1105-NAL</p>
+                                    </div>
+                                    <div class="barcode w-24" aria-hidden="true"></div>
+                                </div>
+                                <p id="pickNotice" class="mt-3 hidden rounded-lg bg-amber/20 px-3 py-2 text-[0.62rem] font-semibold leading-4 text-ink/70"></p>
+                            </div>
+                        </article>
+
+                        <p class="mt-4 text-center text-[0.62rem] leading-5 text-smoke">
+                            Cuota de referencia. Verifica el mercado en tu casa de apuestas antes de jugar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cinta animada -->
+        <div class="overflow-hidden border-y border-ink bg-lime text-ink" aria-label="Temas que cubrimos">
+            <div class="marquee-track py-3.5">
+                <div class="flex shrink-0 items-center">
+                    <span class="ticker-item">Análisis, no promesas</span><span class="ticker-dot"></span>
+                    <span class="ticker-item">Fútbol</span><span class="ticker-dot"></span>
+                    <span class="ticker-item">Córners</span><span class="ticker-dot"></span>
+                    <span class="ticker-item">Medio tiempo</span><span class="ticker-dot"></span>
+                    <span class="ticker-item">Gestión de banca</span><span class="ticker-dot"></span>
+                    <span class="ticker-item">Pick gratis</span><span class="ticker-dot"></span>
+                    <span class="ticker-item">+18 · Juego responsable</span><span class="ticker-dot"></span>
+                </div>
+                <div class="flex shrink-0 items-center" aria-hidden="true">
+                    <span class="ticker-item">Análisis, no promesas</span><span class="ticker-dot"></span>
+                    <span class="ticker-item">Fútbol</span><span class="ticker-dot"></span>
+                    <span class="ticker-item">Córners</span><span class="ticker-dot"></span>
+                    <span class="ticker-item">Medio tiempo</span><span class="ticker-dot"></span>
+                    <span class="ticker-item">Gestión de banca</span><span class="ticker-dot"></span>
+                    <span class="ticker-item">Pick gratis</span><span class="ticker-dot"></span>
+                    <span class="ticker-item">+18 · Juego responsable</span><span class="ticker-dot"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Análisis -->
+        <section id="analisis" class="relative overflow-hidden border-b border-white/10 py-20 lg:py-28">
+            <div class="absolute left-1/2 top-0 -z-10 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-violet/[0.08] blur-3xl" aria-hidden="true"></div>
+            <img class="deco" src="iconos/BasquetP.png" alt="" aria-hidden="true" decoding="async" style="left:28px;top:44%;transform:rotate(-8deg)" />
+            <img class="deco" src="iconos/FutbolP.png" alt="" aria-hidden="true" decoding="async" style="right:28px;bottom:48px;transform:rotate(8deg)" />
+            <div class="shell">
+                <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+                    <div class="lg:col-span-7">
+                        <p class="eyebrow reveal"><span class="eyebrow-line"></span>La lectura del día</p>
+                        <h2 class="section-title reveal mt-5">
+                            El porqué,
+                            <span class="block text-lime">no solo el qué.</span>
+                        </h2>
+                        <p id="analysisText" class="reveal mt-7 max-w-2xl text-base leading-8 text-smoke sm:text-[1.05rem]">
+                            El clásico se juega en el Atanasio y Nacional necesita hacerse fuerte de local. La idea del pick es acompañar esa localía con un partido de ritmo controlado: pocos goles, llegadas por bandas y un primer tiempo que no se escape. Es una combinada, así que las cuatro condiciones tienen que cumplirse.
+                        </p>
+
+                        <div id="pickKeys" class="mt-9 grid gap-3 sm:grid-cols-3">
+                            <div class="feature-card">
+                                <svg class="h-5 w-5 text-lime" aria-hidden="true"><use href="#icon-target"></use></svg>
+                                <h3 class="mt-5 font-display text-2xl font-semibold uppercase leading-none">Localía</h3>
+                                <p class="mt-2 text-xs leading-6 text-smoke">Nacional llega a su casa con la obligación de sumar y el apoyo de su gente.</p>
+                            </div>
+                            <div class="feature-card">
+                                <svg class="h-5 w-5 text-lime" aria-hidden="true"><use href="#icon-chart"></use></svg>
+                                <h3 class="mt-5 font-display text-2xl font-semibold uppercase leading-none">Ritmo</h3>
+                                <p class="mt-2 text-xs leading-6 text-smoke">Un clásico suele cerrarse. Por eso buscamos menos de 3.5 goles en el partido.</p>
+                            </div>
+                            <div class="feature-card">
+                                <svg class="h-5 w-5 text-lime" aria-hidden="true"><use href="#icon-corner"></use></svg>
+                                <h3 class="mt-5 font-display text-2xl font-semibold uppercase leading-none">Córners</h3>
+                                <p class="mt-2 text-xs leading-6 text-smoke">La pata más frágil: si el partido se juega sin amplitud, el pick se cae.</p>
+                            </div>
+                        </div>
+
+                        <div class="reveal mt-8 flex items-start gap-3 rounded-2xl border border-white/10 bg-panel/70 p-4 sm:p-5">
+                            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-lime/10 text-lime">
+                                <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-alert"></use></svg>
+                            </span>
+                            <p class="text-xs leading-6 text-smoke">
+                                <strong class="font-bold text-cream">Esto no es una promesa de ganar.</strong>
+                                Es una lectura del partido con condiciones concretas. Si cambia el once inicial o el contexto, el pick puede dejar de tener sentido.
+                            </p>
+                        </div>
+                    </div>
+
+                    <aside class="lg:col-span-5">
+                        <div class="reveal sticky top-28 rounded-2xl border border-white/10 bg-panel/80 p-5 sm:p-7">
+                            <div class="flex items-center justify-between gap-3">
+                                <p class="text-[0.64rem] font-extrabold uppercase tracking-[0.18em] text-lime">Ficha del pick</p>
+                                <span class="rounded-full border border-white/10 px-2 py-1 text-[0.55rem] font-bold uppercase tracking-wider text-smoke">Actualizada</span>
+                            </div>
+
+                            <dl class="mt-5 divide-y divide-white/[0.08] text-sm">
+                                <div class="flex items-start justify-between gap-5 py-3">
+                                    <dt class="shrink-0 text-[0.68rem] font-semibold uppercase tracking-wider text-smoke">Partido</dt>
+                                    <dd id="factMatch" class="text-right text-[0.8rem] font-bold leading-5 text-cream">Atlético Nacional vs Millonarios</dd>
+                                </div>
+                                <div class="flex items-start justify-between gap-5 py-3">
+                                    <dt class="shrink-0 text-[0.68rem] font-semibold uppercase tracking-wider text-smoke">Competición</dt>
+                                    <dd id="factCompetition" class="text-right text-[0.8rem] font-bold leading-5 text-cream">Liga BetPlay Dimayor</dd>
+                                </div>
+                                <div class="flex items-start justify-between gap-5 py-3">
+                                    <dt class="shrink-0 text-[0.68rem] font-semibold uppercase tracking-wider text-smoke">Hora</dt>
+                                    <dd id="factKickoff" class="text-right text-[0.8rem] font-bold leading-5 text-cream">20:10 (COT)</dd>
+                                </div>
+                                <div class="flex items-start justify-between gap-5 py-3">
+                                    <dt class="shrink-0 text-[0.68rem] font-semibold uppercase tracking-wider text-smoke">Sede</dt>
+                                    <dd id="factVenue" class="text-right text-[0.8rem] font-bold leading-5 text-cream">Atanasio Girardot</dd>
+                                </div>
+                                <div class="flex items-start justify-between gap-5 py-3">
+                                    <dt class="shrink-0 text-[0.68rem] font-semibold uppercase tracking-wider text-smoke">Tipo</dt>
+                                    <dd id="factBetType" class="text-right text-[0.8rem] font-bold leading-5 text-cream">Combinada de 4</dd>
+                                </div>
+                                <div class="flex items-start justify-between gap-5 py-3">
+                                    <dt class="shrink-0 text-[0.68rem] font-semibold uppercase tracking-wider text-smoke">Stake</dt>
+                                    <dd id="factStake" class="text-right text-[0.8rem] font-bold leading-5 text-lime">1% – 2% de tu banca</dd>
+                                </div>
+                            </dl>
+
+                            <div class="mt-6 rounded-xl bg-ink/70 p-4">
+                                <div class="flex items-center justify-between gap-3">
+                                    <p class="text-[0.58rem] font-extrabold uppercase tracking-[0.16em] text-smoke">Próxima edición</p>
+                                    <span class="flex items-center gap-1.5 text-[0.55rem] font-bold uppercase tracking-wider text-lime">
+                                        <span class="h-1.5 w-1.5 animate-pulseSoft rounded-full bg-lime"></span>
+                                        En vivo
+                                    </span>
+                                </div>
+                                <div id="countdown" class="mt-3 font-display text-[2.55rem] font-semibold leading-none tracking-[0.05em] text-cream tabular-nums" aria-live="off">
+                                    00:00:00
+                                </div>
+                                <p class="mt-2 text-[0.65rem] leading-5 text-smoke">
+                                    Un pick nuevo cada día. Si no quieres buscarlo, llega primero al
+                                    <a href="https://t.me/+PYtv12wHqtBhNWM5" target="_blank" rel="noopener noreferrer" class="font-semibold text-cream underline decoration-lime/40 underline-offset-2 hover:text-lime">Telegram</a>.
+                                </p>
+                            </div>
+
+                            <div class="mt-4 flex items-center gap-2 text-[0.62rem] font-semibold text-smoke">
+                                <svg class="h-3.5 w-3.5 shrink-0 text-lime" aria-hidden="true"><use href="#icon-shield"></use></svg>
+                                Nunca apuestes dinero que necesites para vivir.
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deportes -->
+        <section id="deportes" class="relative overflow-hidden border-b border-white/10 py-16 lg:py-20">
+            <div class="absolute -right-24 top-0 -z-10 h-[380px] w-[380px] rounded-full bg-violet/[0.09] blur-3xl" aria-hidden="true"></div>
+            <div class="shell">
+                <div class="grid gap-6 lg:grid-cols-12 lg:items-end">
+                    <div class="lg:col-span-7">
+                        <p class="eyebrow reveal"><span class="eyebrow-line"></span>Pasión deportiva</p>
+                        <h2 class="reveal mt-4 font-display text-[clamp(2.8rem,6vw,4.8rem)] font-semibold uppercase leading-[0.88] tracking-[-0.03em]">
+                            Tres balones.
+                            <span class="block text-lime">Una misma lectura.</span>
+                        </h2>
+                    </div>
+                    <p class="reveal max-w-md text-sm leading-7 text-smoke lg:col-span-5 lg:justify-self-end">
+                        El fútbol manda en el pick diario. Alrededor, básquet y tenis: la misma energía y distintos balones.
+                    </p>
+                </div>
+
+                <div class="mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                    <article class="sport-card reveal" style="--sport-glow: rgba(255,255,255,.2); --sport-accent:#F4F4F5; --sport-border:rgba(255,255,255,.45)">
+                        <div class="sport-card-top">
+                            <span class="sport-index">01 / 90 MIN</span>
+                            <span class="sport-category">Fútbol</span>
+                        </div>
+                        <img class="sport-ball" src="iconos/Futbol.png" alt="Ícono de fútbol" loading="lazy" decoding="async" style="object-fit:contain" />
+                        <div class="sport-card-bottom">
+                            <div class="sport-card-line"></div>
+                            <h3 class="sport-card-title">Fútbol</h3>
+                            <p class="sport-card-markets">Resultado · Córners · Goles</p>
+                        </div>
+                    </article>
+
+                    <article class="sport-card reveal" style="--sport-glow: rgba(249,115,22,.26); --sport-accent:#F97316; --sport-border:rgba(249,115,22,.5); transition-delay: 60ms">
+                        <div class="sport-card-top">
+                            <span class="sport-index">02 / 48 MIN</span>
+                            <span class="sport-category">Básquet</span>
+                        </div>
+                        <img class="sport-ball" src="iconos/Basquet.png" alt="Ícono de básquet" loading="lazy" decoding="async" style="object-fit:contain" />
+                        <div class="sport-card-bottom">
+                            <div class="sport-card-line"></div>
+                            <h3 class="sport-card-title">Básquet</h3>
+                            <p class="sport-card-markets">Puntos · Hándicap · Totales</p>
+                        </div>
+                    </article>
+
+                    <article class="sport-card reveal" style="--sport-glow: rgba(204,228,45,.26); --sport-accent:#CCE42D; --sport-border:rgba(204,228,45,.5); transition-delay: 120ms">
+                        <div class="sport-card-top">
+                            <span class="sport-index">03 / 3 SETS</span>
+                            <span class="sport-category">Tenis</span>
+                        </div>
+                        <img class="sport-ball" src="iconos/Tenis.png" alt="Ícono de tenis" loading="lazy" decoding="async" style="object-fit:contain" />
+                        <div class="sport-card-bottom">
+                            <div class="sport-card-line"></div>
+                            <h3 class="sport-card-title">Tenis</h3>
+                            <p class="sport-card-markets">Sets · Juegos · Ganador</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cómo funciona -->
+        <section id="como-funciona" class="relative overflow-hidden bg-cream py-20 text-ink lg:py-28">
+            <div class="pointer-events-none absolute -right-16 top-0 select-none font-display text-[18rem] font-bold leading-none text-violet/[0.14] sm:text-[28rem]" aria-hidden="true">
+                PICK
+            </div>
+            <div class="shell relative">
+                <div class="grid gap-8 lg:grid-cols-12 lg:items-end">
+                    <div class="lg:col-span-7">
+                        <p class="eyebrow !text-ink/60 reveal"><span class="eyebrow-line !bg-ink"></span>Aprende a leerlo</p>
+                        <h2 class="section-title reveal mt-5">
+                            Menos fe.
+                            <span class="block text-ink/50">Más criterio.</span>
+                        </h2>
+                    </div>
+                    <p class="reveal max-w-md text-sm leading-7 text-ink/60 lg:col-span-5 lg:justify-self-end">
+                        Un pick no es un botón de dinero fácil. Es una hipótesis con condiciones. Aquí te explico cómo leerla antes de arriesgar tu dinero.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid gap-8 border-t border-ink/15 pt-8 md:grid-cols-3 md:gap-10">
+                    <article class="reveal">
+                        <span class="step-number" aria-hidden="true">01</span>
+                        <h3 class="mt-3 font-display text-3xl font-semibold uppercase leading-none">Mira el mercado</h3>
+                        <p class="mt-3 text-sm leading-7 text-ink/60">
+                            El pick te dice exactamente qué tiene que pasar: quién gana, si es en los 90 minutos, cuántos córners o cuántos goles. Si el mercado no coincide, no juegues.
+                        </p>
+                    </article>
+                    <article class="reveal" style="transition-delay: 80ms">
+                        <span class="step-number" aria-hidden="true">02</span>
+                        <h3 class="mt-3 font-display text-3xl font-semibold uppercase leading-none">Revisa las condiciones</h3>
+                        <p class="mt-3 text-sm leading-7 text-ink/60">
+                            En una combinada, todas las patas deben cumplirse. Una sola que falle y el pick pierde. Léelas completas antes de copiar la jugada.
+                        </p>
+                    </article>
+                    <article class="reveal" style="transition-delay: 160ms">
+                        <span class="step-number" aria-hidden="true">03</span>
+                        <h3 class="mt-3 font-display text-3xl font-semibold uppercase leading-none">Define tu stake</h3>
+                        <p class="mt-3 text-sm leading-7 text-ink/60">
+                            Usa un porcentaje fijo de tu banca, nunca el dinero de la casa ni plata que necesites. Si pierdes, no subas la apuesta para recuperarla.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="reveal mt-14 grid overflow-hidden rounded-2xl bg-ink text-cream md:grid-cols-[auto_1fr_auto] md:items-center">
+                    <div class="flex items-center gap-3 border-b border-white/10 p-5 md:border-b-0 md:border-r md:px-7">
+                        <span class="grid h-9 w-9 place-items-center rounded-full bg-lime text-ink">
+                            <svg class="h-4 w-4" aria-hidden="true"><use href="#icon-alert"></use></svg>
+                        </span>
+                        <span class="text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-lime">Regla de oro</span>
+                    </div>
+                    <p class="p-5 text-sm leading-7 text-cream/70 md:px-7">
+                        Si una condición falla, la combinada falla. No persigas pérdidas: el siguiente pick no existe para recuperar el anterior.
+                    </p>
+                    <div class="px-5 pb-5 md:py-5 md:pl-0 md:pr-7">
+                        <a href="#ticket" class="btn btn-lime w-full md:w-auto">
+                            Volver al pick
+                            <svg aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comunidad / redes -->
+        <section id="comunidad" class="relative overflow-hidden py-20 lg:py-28">
+            <div class="absolute -left-40 top-1/3 -z-10 h-[420px] w-[420px] rounded-full bg-violet/[0.09] blur-3xl" aria-hidden="true"></div>
+            <img class="deco" src="iconos/FutbolD.png" alt="" aria-hidden="true" decoding="async" style="left:28px;top:90px;transform:rotate(-8deg)" />
+            <img class="deco" src="iconos/BasquetD.png" alt="" aria-hidden="true" decoding="async" style="left:28px;bottom:50px;transform:rotate(8deg)" />
+            <img class="deco" src="iconos/TenisD.png" alt="" aria-hidden="true" decoding="async" style="right:28px;top:50%;transform:rotate(8deg)" />
+            <div class="shell">
+                <div class="grid gap-8 lg:grid-cols-12 lg:items-end">
+                    <div class="lg:col-span-7">
+                        <p class="eyebrow !text-violet reveal"><span class="eyebrow-line !bg-violet"></span>La comunidad</p>
+                        <h2 class="section-title reveal mt-5">
+                            El pick también
+                            <span class="block text-violet">vive en tus redes.</span>
+                        </h2>
+                    </div>
+                    <p class="reveal max-w-md text-sm leading-7 text-smoke lg:col-span-5 lg:justify-self-end">
+                        Análisis corto, avisos de última hora y el pick del día en el formato que prefieras. Elige tu canal y nos vemos ahí.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                    <a href="https://t.me/+PYtv12wHqtBhNWM5"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="group social-tile social-tile-featured reveal"
+                       aria-label="Abrir Telegram en una pestaña nueva">
+                        <div class="flex items-start justify-between gap-4">
+                            <span class="grid h-11 w-11 place-items-center rounded-full bg-ink text-lime">
+                                <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-telegram"></use></svg>
+                            </span>
+                            <span class="rounded-full bg-ink/10 px-2.5 py-1 text-[0.55rem] font-extrabold uppercase tracking-[0.12em]">Canal principal</span>
+                        </div>
+                        <div class="relative z-10 mt-8">
+                            <p class="font-display text-3xl font-semibold uppercase leading-none">Telegram</p>
+                            <div class="mt-1.5 flex items-center justify-between gap-3">
+                                <p class="text-[0.7rem] font-bold text-ink/60">Canal oficial</p>
+                                <svg class="h-5 w-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg>
+                            </div>
+                            <p class="mt-2 text-[0.65rem] leading-5 text-ink/60">El pick llega primero aquí.</p>
+                        </div>
+                    </a>
+
+                    <a href="https://wa.me/573146798222?text=Hola%2C%20quiero%20entrar%20al%20VIP"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="group social-tile reveal"
+                       style="transition-delay: 50ms"
+                       aria-label="Entrar al VIP por WhatsApp en una pestaña nueva">
+                        <div class="flex items-start justify-between gap-4">
+                            <span class="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-cream">
+                                <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                            </span>
+                            <svg class="h-5 w-5 text-smoke transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-lime" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg>
+                        </div>
+                        <div class="relative z-10 mt-8">
+                            <p class="font-display text-3xl font-semibold uppercase leading-none">VIP WhatsApp</p>
+                            <p class="mt-1.5 text-[0.7rem] font-bold text-smoke">Escríbenos para entrar</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@danw414?_r=1&amp;_t=ZS-9BC2ZJ75r6b"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="group social-tile reveal"
+                       style="transition-delay: 100ms"
+                       aria-label="Abrir TikTok en una pestaña nueva">
+                        <div class="flex items-start justify-between gap-4">
+                            <span class="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-cream">
+                                <svg class="h-5 w-5" aria-hidden="true"><use href="#icon-tiktok"></use></svg>
+                            </span>
+                            <svg class="h-5 w-5 text-smoke transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-lime" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg>
+                        </div>
+                        <div class="relative z-10 mt-8">
+                            <p class="font-display text-3xl font-semibold uppercase leading-none">TikTok</p>
+                            <p class="mt-1.5 text-[0.7rem] font-bold text-smoke">@danw414</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="border-t border-white/10 py-20 lg:py-28">
+            <div class="shell">
+                <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+                    <div class="lg:col-span-5">
+                        <p class="eyebrow reveal"><span class="eyebrow-line"></span>Sin letra pequeña</p>
+                        <h2 class="section-title reveal mt-5">
+                            Preguntas
+                            <span class="block text-lime">frecuentes.</span>
+                        </h2>
+                        <p class="reveal mt-6 max-w-sm text-sm leading-7 text-smoke">
+                            Si algo no queda claro, pregúntalo en el canal. La transparencia también es parte del pick.
+                        </p>
+                        <a href="https://t.me/+PYtv12wHqtBhNWM5"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-outline reveal mt-7">
+                            <svg aria-hidden="true"><use href="#icon-telegram"></use></svg>
+                            Preguntar en Telegram
+                        </a>
+                    </div>
+
+                    <div class="reveal lg:col-span-7">
+                        <details class="faq-item" open>
+                            <summary>
+                                ¿El pick del día es realmente gratis?
+                                <span class="faq-plus" aria-hidden="true"><svg class="h-4 w-4"><use href="#icon-plus"></use></svg></span>
+                            </summary>
+                            <p class="faq-answer">
+                                Sí. El pick diario, su análisis y las condiciones se publican sin costo y sin registro. Si en el futuro existe algún contenido premium, se avisará de forma clara antes de cobrar.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>
+                                ¿Qué significa que sea una combinada?
+                                <span class="faq-plus" aria-hidden="true"><svg class="h-4 w-4"><use href="#icon-plus"></use></svg></span>
+                            </summary>
+                            <p class="faq-answer">
+                                Que el pick reúne varias condiciones en una sola apuesta. Para que se considere acertado, todas deben cumplirse. Por ejemplo: que gane un equipo, que haya más de 8.5 córners y que se marquen menos de 3.5 goles. Si una falla, la combinada pierde.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>
+                                ¿Garantizas que la apuesta se gane?
+                                <span class="faq-plus" aria-hidden="true"><svg class="h-4 w-4"><use href="#icon-plus"></use></svg></span>
+                            </summary>
+                            <p class="faq-answer">
+                                No. Nadie puede garantizar el resultado de un partido. Aquí publicamos una lectura y unas condiciones concretas; el riesgo siempre existe. Nunca apuestes dinero que necesites para tus gastos o tus obligaciones.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>
+                                ¿Cuánto debería apostar?
+                                <span class="faq-plus" aria-hidden="true"><svg class="h-4 w-4"><use href="#icon-plus"></use></svg></span>
+                            </summary>
+                            <p class="faq-answer">
+                                Una referencia habitual es entre 1% y 2% de tu banca por pick, pero cada persona debe definir su propio límite. No uses dinero prestado, no persigas pérdidas y no aumentes el stake para “recuperar” una jugada anterior.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>
+                                ¿Qué pasa si el partido se aplaza o se suspende?
+                                <span class="faq-plus" aria-hidden="true"><svg class="h-4 w-4"><use href="#icon-plus"></use></svg></span>
+                            </summary>
+                            <p class="faq-answer">
+                                Depende de las reglas de cada casa de apuestas. Revisa sus términos para aplazamientos, cambios de sede y anulaciones. Si el pick cambia por un aplazamiento, se avisará en el canal de Telegram.
+                            </p>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>
+                                ¿Puedo compartir el pick con mis amigos?
+                                <span class="faq-plus" aria-hidden="true"><svg class="h-4 w-4"><use href="#icon-plus"></use></svg></span>
+                            </summary>
+                            <p class="faq-answer">
+                                Claro. Comparte el enlace o usa el botón “Compartir” de la tarjeta. Solo recuerda que cada persona decide si apuesta y cuánto, y que este contenido es solo para mayores de 18 años.
+                            </p>
+                        </details>
+
+                        <div class="mt-8 flex items-start gap-3 rounded-xl border border-amber/20 bg-amber/[0.06] p-4">
+                            <span class="mt-0.5 text-amber" aria-hidden="true"><svg class="h-4 w-4"><use href="#icon-alert"></use></svg></span>
+                            <p class="text-[0.68rem] leading-5 text-smoke">
+                                <strong class="text-cream">Juego responsable.</strong> Si apostar dejó de ser un juego, busca ayuda. En Colombia puedes consultar los canales oficiales de
+                                <a href="https://www.coljuegos.gov.co/" target="_blank" rel="noopener noreferrer" class="font-semibold text-cream underline decoration-white/30 underline-offset-2 hover:text-lime">Coljuegos</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA final -->
+        <section id="unete" class="px-3 pb-3 sm:px-5 sm:pb-5">
+            <div class="relative overflow-hidden rounded-[1.6rem] bg-lime text-ink">
+                <div class="pointer-events-none absolute -right-10 -top-20 select-none font-display text-[16rem] font-bold leading-none text-ink/[0.06] sm:text-[24rem]" aria-hidden="true">
+                    90
+                </div>
+                <div class="shell relative flex flex-col items-start justify-between gap-8 py-12 sm:py-16 lg:flex-row lg:items-end">
+                    <div>
+                        <p class="text-[0.66rem] font-extrabold uppercase tracking-[0.2em] text-ink/60">El próximo pick ya viene</p>
+                        <h2 class="mt-3 max-w-3xl font-display text-[clamp(3rem,8vw,6.6rem)] font-semibold uppercase leading-[0.82] tracking-[-0.04em]">
+                            Hoy hay pick.
+                            <span class="block text-ink/50">Mañana también.</span>
+                        </h2>
+                        <p class="mt-5 max-w-lg text-sm leading-7 text-ink/65">
+                            Recibe el análisis del día, las condiciones y los avisos de última hora directamente en tu teléfono.
+                        </p>
+                    </div>
+                    <div class="flex w-full flex-col gap-2.5 sm:w-auto sm:min-w-[250px]">
+                        <a href="https://t.me/+PYtv12wHqtBhNWM5"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-ink w-full !min-h-[56px] !justify-between !px-6">
+                            Entrar al Telegram
+                            <svg aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg>
+                        </a>
+                        <a href="#comunidad" class="btn w-full !min-h-[48px] border border-ink/20 text-ink hover:bg-ink/5">
+                            Ver todas las redes
+                            <svg aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 pb-10 pt-14">
+        <div class="shell">
+            <div class="grid gap-10 lg:grid-cols-12">
+                <div class="lg:col-span-5">
+                    <a href="#pick" class="inline-flex items-center" aria-label="Pick Diario, ir al inicio">
+                        <img src="logo/Logo.png" alt="Pick Diario" class="w-auto" style="height: clamp(3.25rem, 5vw, 4rem)" height="64" />
+                    </a>
+                    <p class="mt-4 max-w-sm text-sm leading-7 text-smoke">
+                        Análisis deportivo diario, sin humo y con condiciones claras. Un pick gratuito para una comunidad que decide con criterio.
+                    </p>
+                    <div class="mt-6 flex items-center gap-2">
+                        <a href="https://t.me/+PYtv12wHqtBhNWM5" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Telegram">
+                            <svg aria-hidden="true"><use href="#icon-telegram"></use></svg>
+                        </a>
+                        <a href="https://wa.me/573146798222?text=Hola%2C%20quiero%20entrar%20al%20VIP" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="VIP por WhatsApp">
+                            <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                        </a>
+                        <a href="https://www.tiktok.com/@danw414?_r=1&amp;_t=ZS-9BC2ZJ75r6b" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="TikTok">
+                            <svg aria-hidden="true"><use href="#icon-tiktok"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <p class="text-[0.63rem] font-extrabold uppercase tracking-[0.18em] text-cream/55">Explorar</p>
+                    <ul class="mt-4 space-y-2.5 text-sm font-semibold text-cream/70">
+                        <li><a href="#pick" class="transition hover:text-lime">Pick de hoy</a></li>
+                        <li><a href="#analisis" class="transition hover:text-lime">Análisis</a></li>
+                        <li><a href="#deportes" class="transition hover:text-lime">Deportes</a></li>
+                        <li><a href="#como-funciona" class="transition hover:text-lime">Cómo funciona</a></li>
+                        <li><a href="#comunidad" class="transition hover:text-lime">Comunidad</a></li>
+                        <li><a href="#faq" class="transition hover:text-lime">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-4">
+                    <p class="text-[0.63rem] font-extrabold uppercase tracking-[0.18em] text-cream/55">Juego responsable</p>
+                    <div class="mt-4 rounded-xl border border-white/10 bg-panel/70 p-4">
+                        <div class="flex items-center gap-2">
+                            <span class="rounded border border-white/20 px-1.5 py-0.5 text-[0.6rem] font-extrabold tracking-wider text-cream/70">+18</span>
+                            <span class="text-[0.65rem] font-extrabold uppercase tracking-[0.12em] text-cream/60">Solo mayores de edad</span>
+                        </div>
+                        <p class="mt-3 text-[0.68rem] leading-5 text-smoke">
+                            Este sitio es contenido informativo y de entretenimiento. No es una casa de apuestas ni procesa pagos. Las apuestas implican riesgo y pueden causar adicción. Si decides jugar, hazlo con dinero que puedas permitirte perder.
+                        </p>
+                        <a href="https://www.coljuegos.gov.co/" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-[0.65rem] font-bold text-lime hover:text-cream">
+                            Recursos de juego responsable
+                            <svg class="h-3 w-3" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 flex flex-col justify-between gap-4 border-t border-white/10 pt-6 text-[0.66rem] text-smoke sm:flex-row sm:items-center">
+                <p>© <span id="year">2026</span> Pick Diario. Todos los derechos reservados.</p>
+                <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+                    <a href="#faq" class="transition hover:text-cream">Términos y condiciones</a>
+                    <a href="#faq" class="transition hover:text-cream">Privacidad</a>
+                    <a href="mailto:hola@pickdiario.com" data-email class="transition hover:text-cream">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite">
+        <svg aria-hidden="true"><use href="#icon-check"></use></svg>
+        <span id="toastText">Pick copiado</span>
+    </div>
+
+    <script src="js/config.js?v=2" defer></script>
+    <script src="js/picks.js?v=2" defer></script>
+    <script src="js/main.js?v=3" defer></script>
+</body>
+</html>

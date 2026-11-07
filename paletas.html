@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10 paletas · Pick Diario</title>
+<style>
+  * { box-sizing: border-box; }
+  :root {
+    color-scheme: dark;
+    --page: #0f0917;
+    --panel: #1b1028;
+    --panel-soft: #251534;
+    --line: rgba(192, 132, 252, .18);
+    --text: #f7f2ff;
+    --muted: #b6a5c9;
+    --lime: #8aff3c;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(192,132,252,.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(192,132,252,.055) 1px, transparent 1px);
+    background-size: 68px 68px;
+    mask-image: linear-gradient(to bottom, black, transparent 82%);
+  }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  .wrap { width: min(1260px, calc(100% - 40px)); margin: 0 auto; position: relative; }
+  header { padding: 52px 0 28px; border-bottom: 1px solid var(--line); }
+  .kicker { display: flex; gap: 10px; align-items: center; color: var(--lime); font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+  .kicker::before { content: ""; width: 30px; height: 1px; background: currentColor; }
+  h1 { font-family: "Arial Narrow", "Bahnschrift", sans-serif; font-stretch: condensed; font-size: clamp(48px, 8vw, 96px); line-height: .86; letter-spacing: -.035em; text-transform: uppercase; margin: 18px 0 16px; }
+  h1 em { color: var(--lime); font-style: normal; }
+  .intro { max-width: 760px; color: var(--muted); font-size: 16px; line-height: 1.7; margin: 0; }
+  .intro strong { color: var(--text); }
+  .nav { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 22px; }
+  .nav a { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; font-size: 11px; font-weight: 700; color: var(--text); }
+  .nav a:hover, .nav a:focus-visible { border-color: var(--lime); color: var(--lime); }
+  .nav i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: none; }
+
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; padding: 30px 0 14px; }
+  .palette { background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: 22px; scroll-margin-top: 20px; min-width: 0; }
+  .palette-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+  .title-row { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .letter { width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center; font-family: "Arial Narrow", "Bahnschrift", sans-serif; font-size: 23px; font-weight: 900; flex: none; }
+  h2 { margin: 0; font-family: "Arial Narrow", "Bahnschrift", sans-serif; font-stretch: condensed; font-size: clamp(27px, 3.3vw, 37px); line-height: .95; text-transform: uppercase; letter-spacing: -.005em; }
+  .desc { margin: 4px 0 0; color: var(--muted); font-size: 12px; line-height: 1.4; }
+  .tag { flex: none; border: 1px solid rgba(201,255,61,.38); color: var(--lime); border-radius: 999px; padding: 5px 9px; font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+  .tag.neutral { border-color: var(--line); color: var(--muted); }
+  .swatches { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 7px; margin-top: 18px; }
+  .swatch { border: 0; padding: 0; background: none; color: inherit; text-align: left; cursor: pointer; min-width: 0; font: inherit; }
+  .chip { display: block; height: 78px; border-radius: 10px; border: 1px solid rgba(255,255,255,.2); transition: transform .18s, box-shadow .18s; }
+  .swatch:hover .chip, .swatch:focus-visible .chip { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.35); }
+  .swatch:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 11px; }
+  .role { display: block; margin-top: 7px; color: var(--muted); font-size: 8.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .hex { display: block; margin-top: 2px; color: var(--text); font-family: Consolas, monospace; font-size: 10px; font-weight: 700; letter-spacing: -.02em; }
+  .preview { margin-top: 17px; padding: 16px; border-radius: 15px; background: var(--pbg); border: 1px solid rgba(127,127,127,.32); }
+  .preview-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .preview-label { color: var(--pmuted); font-size: 8px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+  .live { display: inline-flex; align-items: center; gap: 5px; border-radius: 999px; background: var(--paccent); color: var(--ponaccent); padding: 4px 7px; font-size: 7px; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; }
+  .live::before { content: ""; width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
+  .preview-card { margin-top: 12px; background: var(--psurface); border: 1px solid rgba(127,127,127,.32); border-radius: 12px; padding: 14px; }
+  .preview-league { color: var(--pmuted); font-size: 8px; letter-spacing: .13em; text-transform: uppercase; font-weight: 700; }
+  .preview-card h3 { margin: 5px 0 2px; font-family: "Arial Narrow", "Bahnschrift", sans-serif; font-stretch: condensed; font-size: 27px; line-height: .92; text-transform: uppercase; color: var(--ptext); }
+  .preview-card p { margin: 0; color: var(--pmuted); font-size: 10.5px; }
+  .preview-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin-top: 12px; }
+  .odds { color: var(--paccent); font-family: "Arial Narrow", "Bahnschrift", sans-serif; font-size: 36px; line-height: .8; font-weight: 800; }
+  .odds small { display: block; margin-top: 5px; color: var(--pmuted); font-family: "Segoe UI", sans-serif; font-size: 7px; letter-spacing: .12em; text-transform: uppercase; }
+  .cta { display: inline-block; border-radius: 999px; background: var(--paccent); color: var(--ponaccent); padding: 8px 11px; font-size: 8px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 9px; }
+  .chips span { border: 1px solid rgba(127,127,127,.32); border-radius: 999px; padding: 4px 6px; color: var(--pmuted); font-size: 7.5px; }
+  .meta { margin-top: 12px; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .meta p { margin: 0; color: var(--muted); font-size: 10.5px; line-height: 1.5; }
+  .meta p strong { color: var(--text); font-weight: 700; }
+  .swatch-hint { color: var(--muted); font-size: 10px; white-space: nowrap; padding-top: 1px; }
+
+  .note-bar { margin: 10px 0 0; border: 1px solid var(--line); background: rgba(255,255,255,.025); border-radius: 14px; padding: 13px 16px; color: var(--muted); font-size: 11px; line-height: 1.6; }
+  .note-bar strong { color: var(--text); }
+  footer { padding: 28px 0 48px; color: var(--muted); font-size: 11px; line-height: 1.7; }
+  .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 18px); opacity: 0; pointer-events: none; background: var(--text); color: var(--page); padding: 11px 18px; border-radius: 999px; font-size: 12px; font-weight: 800; transition: .25s; z-index: 20; }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  @media (max-width: 980px) {
+    .grid { grid-template-columns: 1fr; }
+    .chip { height: 86px; }
+  }
+  @media (max-width: 620px) {
+    .wrap { width: min(100% - 28px, 1260px); }
+    header { padding-top: 34px; }
+    .grid { gap: 13px; padding-top: 22px; }
+    .palette { padding: 16px; border-radius: 17px; }
+    .swatches { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .chip { height: 72px; }
+    .role { font-size: 8px; }
+    .hex { font-size: 9.5px; }
+    .meta { flex-direction: column; gap: 6px; }
+    .swatch-hint { white-space: normal; }
+    .preview-card h3 { font-size: 25px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">10 direcciones visuales</div>
+    <h1>Elige tu <em>paleta</em></h1>
+    <p class="intro">Diez propuestas para una web de apuestas deportivas, aplicadas a la misma tarjeta de pick. <strong>Toca cualquier color para copiar su código.</strong> La paleta H es la que está activa actualmente.</p>
+    <nav class="nav" id="nav" aria-label="Ir a una paleta"></nav>
+  </header>
+
+  <main>
+    <div class="grid" id="palettes"></div>
+    <noscript><p class="note-bar">Activa JavaScript para ver las 10 paletas.</p></noscript>
+    <p class="note-bar"><strong>Cómo elegir:</strong> usa una base neutral para el 60% del sitio, una superficie para el 25%, un acento para el 10% y reserva el color extra para el 5% (alertas, resultados o detalles premium). Así evitas que la página parezca un semáforo.</p>
+  </main>
+
+  <footer>
+    Todas las combinaciones mantienen contraste AA en textos principales. La paleta H está aplicada en <strong>index.html</strong>. Dime la letra que prefieras y la llevo a la página completa.
+  </footer>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite">Color copiado</div>
+
+<script>
+  const palettes = [
+    {
+      id: "a", letter: "A", name: "Cancha nocturna", tag: "Clásica",
+      desc: "Deportiva, directa y con mucha energía.",
+      bg: "#090B08", surface: "#141812", accent: "#C9FF3D", onAccent: "#090B08",
+      text: "#F4F1E6", muted: "#9AA391", extra: "#FF7354", extraRole: "Alerta",
+      note: "La más potente para redes. El lima concentra la atención en cuota y CTA.",
+      ideal: "TikTok, picks rápidos y audiencia joven."
+    },
+    {
+      id: "b", letter: "B", name: "Azul de confianza", tag: "Premium",
+      desc: "Analítica, seria y cercana a un bookmaker grande.",
+      bg: "#07111F", surface: "#0F1D31", accent: "#3BA9FF", onAccent: "#06101D",
+      text: "#F4F7FB", muted: "#9BB0C9", extra: "#F5C451", extraRole: "Cálido",
+      note: "El azul transmite control; el dorado aporta valor sin competir con el CTA.",
+      ideal: "Marca personal seria, análisis y afiliación."
+    },
+    {
+      id: "c", letter: "C", name: "Rojo de estadio", tag: "Directos",
+      desc: "Pasión, urgencia y ritmo de transmisión en vivo.",
+      bg: "#0B0A0A", surface: "#191313", accent: "#FF4D3D", onAccent: "#0B0A0A",
+      text: "#F8F1EA", muted: "#B7AAA2", extra: "#3DDC97", extraRole: "Éxito",
+      note: "El verde queda reservado para aciertos; el rojo no debe dominar toda la web.",
+      ideal: "Directos, alertas y resultados inmediatos."
+    },
+    {
+      id: "d", letter: "D", name: "Editorial claro", tag: "Confiable",
+      desc: "Menos saturación y más transparencia. Se diferencia del dark típico.",
+      bg: "#F5F0E6", surface: "#FFFFFF", accent: "#0E7A4A", onAccent: "#FFFFFF",
+      text: "#0B1F17", muted: "#55635A", extra: "#D8FF4F", extraRole: "Acento",
+      note: "El lima solo se usa como fondo con tinta oscura; nunca como texto sobre crema.",
+      ideal: "Contenido largo, transparencia y credibilidad."
+    },
+    {
+      id: "e", letter: "E", name: "Oro de sala VIP", tag: "Elegante",
+      desc: "Oscuro y cálido, con aire de membresía exclusiva.",
+      bg: "#0A0A08", surface: "#171510", accent: "#E7B84B", onAccent: "#0A0A08",
+      text: "#F4ECD9", muted: "#A79C83", extra: "#6FCF97", extraRole: "Acierto",
+      note: "El dorado eleva la percepción de valor, pero pierde fuerza si se usa en todo.",
+      ideal: "Picks premium, comunidad cerrada o marca personal fuerte."
+    },
+    {
+      id: "f", letter: "F", name: "Pizarra táctica", tag: "Analítica",
+      desc: "Verde petróleo y naranja: pizarra, datos y lectura de partido.",
+      bg: "#0D1415", surface: "#152124", accent: "#FF7A45", onAccent: "#0D1415",
+      text: "#EAF2F2", muted: "#93A8AA", extra: "#5EEAD4", extraRole: "Cian",
+      note: "El naranja destaca sobre el fondo frío; el cian sirve para datos secundarios.",
+      ideal: "Análisis táctico, estadísticas y audiencia que lee."
+    },
+    {
+      id: "g", letter: "G", name: "Esmeralda y cobre", tag: "Distinta",
+      desc: "Verde profundo con menta y cobre. Dinero sin caer en el neón.",
+      bg: "#071A14", surface: "#0E2A20", accent: "#36D399", onAccent: "#04100C",
+      text: "#ECFDF5", muted: "#90B8A8", extra: "#D98B5F", extraRole: "Cobre",
+      note: "Más sofisticada que el verde lima. Ideal si quieres un tono de ‘banca’.",
+      ideal: "Marca de picks con enfoque en gestión de banca."
+    },
+    {
+      id: "h", letter: "H", name: "Uva eléctrica", tag: "Aplicada",
+      desc: "Uva profunda con verde neón. La combinación elegida para la página.",
+      bg: "#0F0917", surface: "#1E142B", accent: "#8AFF3C", onAccent: "#0F0917",
+      text: "#F7F2FF", muted: "#B6A5C9", extra: "#C084FC", extraRole: "Uva",
+      note: "El verde neón concentra la acción; la uva aporta profundidad y personalidad.",
+      ideal: "Fútbol, comunidad joven y contenido en video."
+    },
+    {
+      id: "i", letter: "I", name: "Cielo nórdico", tag: "Limpia",
+      desc: "Claro y frío, con azul profundo y un coral de alerta.",
+      bg: "#EAF2F5", surface: "#FFFFFF", accent: "#0B4F6C", onAccent: "#FFFFFF",
+      text: "#0A1F2B", muted: "#526B78", extra: "#C2410C", extraRole: "Coral",
+      note: "Se siente más app financiera que casa de apuestas: confianza y orden.",
+      ideal: "Público adulto, análisis y marca sobria."
+    },
+    {
+      id: "j", letter: "J", name: "Arena y terracota", tag: "Cálida",
+      desc: "Papel cálido, terracota y oliva. Una identidad editorial latina.",
+      bg: "#F4E9DA", surface: "#FFF9F0", accent: "#9A3412", onAccent: "#FFFFFF",
+      text: "#2B1A12", muted: "#7A6357", extra: "#4F6428", extraRole: "Oliva",
+      note: "Menos ‘casino’ y más revista deportiva. Diferente sin perder seriedad.",
+      ideal: "Marca personal con contenido, historias y cercanía."
+    }
+  ];
+
+  const nav = document.getElementById("nav");
+  const grid = document.getElementById("palettes");
+  const toast = document.getElementById("toast");
+  let timer;
+
+  const colorRows = (p) => [
+    ["Fondo", p.bg],
+    ["Superficie", p.surface],
+    ["Acento", p.accent],
+    ["Texto", p.text],
+    ["Secundario", p.muted],
+    [p.extraRole, p.extra]
+  ];
+
+  nav.innerHTML = palettes.map((p) => `
+    <a href="#${p.id}"><i style="background:${p.accent}"></i>${p.letter} · ${p.name}</a>
+  `).join("");
+
+  grid.innerHTML = palettes.map((p) => {
+    const swatches = colorRows(p).map(([role, hex]) => `
+      <button class="swatch" type="button" data-hex="${hex}" aria-label="Copiar ${role} ${hex}">
+        <span class="chip" style="background:${hex}"></span>
+        <span class="role">${role}</span>
+        <span class="hex">${hex}</span>
+      </button>
+    `).join("");
+
+    return `
+      <article class="palette" id="${p.id}" style="--pbg:${p.bg};--psurface:${p.surface};--paccent:${p.accent};--ponaccent:${p.onAccent};--ptext:${p.text};--pmuted:${p.muted}">
+        <div class="palette-head">
+          <div class="title-row">
+            <span class="letter" style="background:${p.accent};color:${p.onAccent}">${p.letter}</span>
+            <div>
+              <h2>${p.name}</h2>
+              <p class="desc">${p.desc}</p>
+            </div>
+          </div>
+          <span class="tag ${["Actual", "Aplicada"].includes(p.tag) ? "" : "neutral"}">${p.tag}</span>
+        </div>
+
+        <div class="swatches">${swatches}</div>
+
+        <div class="preview">
+          <div class="preview-top">
+            <span class="preview-label">Pick del día</span>
+            <span class="live">Publicado hoy</span>
+          </div>
+          <div class="preview-card">
+            <div class="preview-league">Fútbol · Liga BetPlay</div>
+            <h3>Atlético Nacional</h3>
+            <p>Gana en los 90 minutos</p>
+            <div class="preview-bottom">
+              <div class="odds">3.10<small>Cuota ref.</small></div>
+              <span class="cta">Ver pick</span>
+            </div>
+            <div class="chips"><span>+8.5 córners</span><span>-3.5 goles</span></div>
+          </div>
+        </div>
+
+        <div class="meta">
+          <p><strong>Ideal para:</strong> ${p.ideal}<br>${p.note}</p>
+          <span class="swatch-hint">Toca un color para copiar</span>
+        </div>
+      </article>
+    `;
+  }).join("");
+
+  async function copy(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (error) {
+      const input = document.createElement("textarea");
+      input.value = text;
+      input.style.position = "fixed";
+      input.style.opacity = "0";
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      input.remove();
+    }
+    toast.textContent = text + " copiado";
+    toast.classList.add("show");
+    clearTimeout(timer);
+    timer = setTimeout(() => toast.classList.remove("show"), 1600);
+  }
+
+  grid.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-hex]");
+    if (button) copy(button.dataset.hex);
+  });
+</script>
+</body>
+</html>
