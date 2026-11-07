@@ -29,17 +29,37 @@
     <link rel="apple-touch-icon" href="logo/LogoPesta%C3%B1a.png?v=4" />
     <link rel="stylesheet" href="assets/css/styles.css?v=5" />
     <style>
+      /* Decoraciones laterales: pequeñas en móvil/tablet (franjas vacías), grandes en escritorio */
       .deco {
         position: absolute;
         z-index: 0;
-        display: none;
-        width: clamp(110px, 9vw, 190px);
+        width: 52px;
         height: auto;
         opacity: 0.5;
         pointer-events: none;
         user-select: none;
       }
+      .deco-h-l  { right: 12px; top: 3.6rem; width: 64px; transform: rotate(8deg); }
+      .deco-h-r  { right: 14px; bottom: 10px; width: 46px; transform: rotate(8deg); }
+      .deco-a-l  { right: 16px; top: 12px; transform: rotate(8deg); }
+      .deco-a-r  { left: 16px; bottom: 12px; transform: rotate(-8deg); }
+      .deco-c-l1 { right: 16px; top: 12px; transform: rotate(8deg); }
+      .deco-c-l2 { left: 16px; bottom: 12px; transform: rotate(-8deg); }
+      .deco-c-r  { right: 16px; bottom: 12px; transform: rotate(8deg); }
+      @media (min-width: 1024px) {
+        .deco, .deco-h-l, .deco-h-r { width: clamp(110px, 9vw, 190px); }
+        .deco-h-l  { left: 28px; right: auto; top: auto; bottom: 48px; transform: rotate(-8deg); }
+        .deco-h-r  { left: auto; right: 28px; top: auto; bottom: 70px; transform: rotate(8deg); }
+        .deco-a-l  { left: 28px; right: auto; top: 44%; bottom: auto; transform: rotate(-8deg); }
+        .deco-a-r  { left: auto; right: 28px; top: auto; bottom: 48px; transform: rotate(8deg); }
+        .deco-c-l1 { left: 28px; right: auto; top: 90px; bottom: auto; transform: rotate(-8deg); }
+        .deco-c-l2 { left: 28px; right: auto; top: auto; bottom: 50px; transform: rotate(8deg); }
+        .deco-c-r  { left: auto; right: 28px; top: 50%; bottom: auto; transform: rotate(8deg); }
+      }
+
       main .shell { position: relative; z-index: 1; }
+
+      /* Botón 1xBet */
       .promo-1x {
         display: flex;
         align-items: center;
@@ -58,7 +78,24 @@
         transform: translateY(-2px);
       }
       .promo-1x img { height: 48px; width: auto; max-width: 96px; flex-shrink: 0; object-fit: contain; }
-      @media (min-width: 1024px) { .deco { display: block; } }
+
+      /* Portada compacta en celular: que se vea hasta el bono al cargar */
+      @media (max-width: 639px) {
+        body > .bg-lime .shell { min-height: 28px !important; padding-top: 0.3rem !important; padding-bottom: 0.3rem !important; }
+        body > header > .shell { min-height: 60px !important; }
+        #pick { padding-top: 0.9rem !important; padding-bottom: 3.4rem !important; }
+        #pick h1.display-xl { font-size: clamp(2rem, 9.5vw, 2.6rem) !important; margin-top: 0.6rem !important; }
+        #pick .hero-lead { margin-top: 0.6rem !important; font-size: 0.86rem !important; line-height: 1.45 !important; }
+        #pick .hero-cta { margin-top: 0.9rem !important; gap: 0.5rem !important; }
+        #pick .hero-cta .btn { min-height: 42px !important; padding-top: 0.4rem !important; padding-bottom: 0.4rem !important; }
+        #pick .hero-chips { margin-top: 0.7rem !important; }
+        #pick .hero-promo { margin-top: 0.7rem !important; }
+        #pick .hero-promo .promo-1x { padding: 0.55rem 0.7rem; gap: 0.65rem; }
+        #pick .hero-promo .promo-1x img { height: 36px; max-width: 72px; }
+        #pick .promo-1x-text { font-size: 0.76rem !important; line-height: 1.2rem !important; margin-top: 0.1rem !important; }
+        #pick .hero-promo > p { margin-top: 0.35rem !important; font-size: 0.56rem !important; line-height: 0.85rem !important; }
+        #pick .hero-note { margin-top: 0.9rem !important; }
+      }
     </style>
     <script>
       document.documentElement.classList.add("js");
@@ -270,12 +307,12 @@
         </div>
 
 
-        <img class="deco" src="iconos/FutbolP.png" alt="" aria-hidden="true" decoding="async" style="left:28px;bottom:48px;transform:rotate(-8deg)" />
-        <img class="deco" src="iconos/TenisP.png" alt="" aria-hidden="true" decoding="async" style="right:28px;bottom:70px;transform:rotate(8deg)" />
+        <img class="deco deco-h-l" src="iconos/FutbolP.png" alt="" aria-hidden="true" decoding="async" />
+        <img class="deco deco-h-r" src="iconos/TenisP.png" alt="" aria-hidden="true" decoding="async" />
 
         <div class="shell">
           <div class="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10 xl:gap-16">
-            <div class="max-w-2xl">
+            <div class="max-w-2xl hero-copy">
               <p class="eyebrow reveal">
                 <span class="eyebrow-line"></span>
                 Análisis deportivo diario
@@ -287,12 +324,12 @@
                 <span class="block italic text-lime">Sin humo.</span>
               </h1>
 
-              <p class="reveal mt-6 max-w-xl text-[0.98rem] leading-7 text-smoke sm:text-lg sm:leading-8" style="transition-delay: 120ms">
+              <p class="hero-lead reveal mt-6 max-w-xl text-[0.98rem] leading-7 text-smoke sm:text-lg sm:leading-8" style="transition-delay: 120ms">
                 Un pick gratuito cada día con su mercado, cuota, <strong class="font-semibold text-cream">condiciones exactas</strong> y análisis.
                 Sin pronósticos mágicos, sin promesas de dinero fácil. Tú decides si te sirve.
               </p>
 
-              <div class="reveal mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row" style="transition-delay: 180ms">
+              <div class="hero-cta reveal mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row" style="transition-delay: 180ms">
                 <a href="#ticket" class="btn btn-lime">
                   Ver el pick de hoy
                   <svg aria-hidden="true"><use href="#icon-arrow-down"></use></svg>
@@ -308,7 +345,7 @@
                 </a>
               </div>
 
-              <div class="reveal mt-7 flex flex-wrap items-center gap-2" style="transition-delay: 240ms">
+              <div class="hero-chips reveal mt-7 flex flex-wrap items-center gap-2" style="transition-delay: 240ms">
                 <a
                   href="https://wa.me/573146798222?text=Hola%2C%20quiero%20entrar%20al%20VIP"
                   target="_blank"
@@ -331,7 +368,7 @@
                 </a>
               </div>
 
-              <div class="reveal mt-7" style="transition-delay: 270ms">
+              <div class="hero-promo reveal mt-7" style="transition-delay: 270ms">
                 <a
                   href="https://tinyurl.com/1xbetRegistrateBonoBienvenida"
                   target="_blank"
@@ -342,14 +379,14 @@
                   <img src="logo/1x.png" alt="1xBet" />
                   <span class="min-w-0 flex-1">
                     <span class="block text-[0.58rem] font-extrabold uppercase tracking-[0.16em] text-lime">Bono de bienvenida</span>
-                    <span class="mt-1 block text-[0.82rem] font-bold leading-5 text-cream">Regístrate y obtén un bono del 100% en la cantidad de tu primera recarga</span>
+                    <span class="promo-1x-text mt-1 block text-[0.82rem] font-bold leading-5 text-cream">Regístrate y obtén un bono del 100% en la cantidad de tu primera recarga</span>
                   </span>
                   <svg class="h-5 w-5 shrink-0 text-lime" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg>
                 </a>
                 <p class="mt-2 text-[0.6rem] leading-4 text-smoke">+18 · Publicidad. Aplican términos y condiciones de 1xBet. Juega con responsabilidad.</p>
               </div>
 
-              <div class="reveal mt-7 flex items-start gap-3 border-l border-lime/30 pl-4" style="transition-delay: 300ms">
+              <div class="hero-note reveal mt-7 flex items-start gap-3 border-l border-lime/30 pl-4" style="transition-delay: 300ms">
                 <span class="mt-0.5 rounded border border-white/15 px-1.5 py-0.5 text-[0.6rem] font-extrabold tracking-wider text-cream/70">+18</span>
                 <p class="text-[0.72rem] leading-5 text-smoke">
                   Las apuestas conllevan riesgo. Este contenido es informativo y no garantiza resultados.
@@ -524,8 +561,8 @@
       <!-- Análisis -->
       <section id="analisis" class="relative overflow-hidden border-b border-white/10 py-20 lg:py-28">
         <div class="absolute left-1/2 top-0 -z-10 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-violet/[0.08] blur-3xl" aria-hidden="true"></div>
-        <img class="deco" src="iconos/BasquetP.png" alt="" aria-hidden="true" decoding="async" style="left:28px;top:44%;transform:rotate(-8deg)" />
-        <img class="deco" src="iconos/FutbolP.png" alt="" aria-hidden="true" decoding="async" style="right:28px;bottom:48px;transform:rotate(8deg)" />
+        <img class="deco deco-a-l" src="iconos/BasquetP.png" alt="" aria-hidden="true" decoding="async" />
+        <img class="deco deco-a-r" src="iconos/FutbolP.png" alt="" aria-hidden="true" decoding="async" />
         <div class="shell">
           <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div class="lg:col-span-7">
@@ -754,9 +791,9 @@
       <!-- Comunidad / redes -->
       <section id="comunidad" class="relative overflow-hidden py-20 lg:py-28">
         <div class="absolute -left-40 top-1/3 -z-10 h-[420px] w-[420px] rounded-full bg-violet/[0.09] blur-3xl" aria-hidden="true"></div>
-        <img class="deco" src="iconos/FutbolD.png" alt="" aria-hidden="true" decoding="async" style="left:28px;top:90px;transform:rotate(-8deg)" />
-        <img class="deco" src="iconos/BasquetD.png" alt="" aria-hidden="true" decoding="async" style="left:28px;bottom:50px;transform:rotate(8deg)" />
-        <img class="deco" src="iconos/TenisD.png" alt="" aria-hidden="true" decoding="async" style="right:28px;top:50%;transform:rotate(8deg)" />
+        <img class="deco deco-c-l1" src="iconos/FutbolD.png" alt="" aria-hidden="true" decoding="async" />
+        <img class="deco deco-c-l2" src="iconos/BasquetD.png" alt="" aria-hidden="true" decoding="async" />
+        <img class="deco deco-c-r" src="iconos/TenisD.png" alt="" aria-hidden="true" decoding="async" />
         <div class="shell">
           <div class="grid gap-8 lg:grid-cols-12 lg:items-end">
             <div class="lg:col-span-7">
