@@ -59,25 +59,82 @@
 
       main .shell { position: relative; z-index: 1; }
 
-      /* Botón 1xBet */
+      /* Botón 1xBet (llamativo) */
       .promo-1x {
+        position: relative;
         display: flex;
         align-items: center;
         gap: 1rem;
-        padding: 0.9rem 1rem;
+        padding: 0.95rem 1rem;
+        overflow: hidden;
         border-radius: 1rem;
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        background: rgba(255, 255, 255, 0.04);
+        border: 1.5px solid rgba(138, 255, 60, 0.7);
+        background: linear-gradient(135deg, rgba(138, 255, 60, 0.2), rgba(192, 132, 252, 0.16) 65%, rgba(255, 255, 255, 0.05));
         text-decoration: none;
-        transition: border-color 0.2s, background 0.2s, transform 0.2s;
+        box-shadow: 0 8px 30px rgba(138, 255, 60, 0.18);
+        animation: promoPulse 2.4s ease-in-out infinite;
+        transition: transform 0.2s, background 0.2s;
+      }
+      .promo-1x::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -60%;
+        width: 40%;
+        background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+        transform: skewX(-18deg);
+        animation: promoShine 3.6s ease-in-out infinite;
+        pointer-events: none;
       }
       .promo-1x:hover,
       .promo-1x:focus-visible {
-        border-color: rgba(138, 255, 60, 0.6);
-        background: rgba(138, 255, 60, 0.07);
-        transform: translateY(-2px);
+        transform: translateY(-2px) scale(1.01);
+        background: linear-gradient(135deg, rgba(138, 255, 60, 0.3), rgba(192, 132, 252, 0.2) 65%, rgba(255, 255, 255, 0.07));
       }
-      .promo-1x img { height: 48px; width: auto; max-width: 96px; flex-shrink: 0; object-fit: contain; }
+      .promo-1x img { height: 48px; width: auto; max-width: 96px; flex-shrink: 0; object-fit: contain; border-radius: 0.5rem; }
+      .promo-1x-tag {
+        display: inline-block;
+        margin-bottom: 0.35rem;
+        padding: 0.15rem 0.5rem;
+        border-radius: 999px;
+        background: #8aff3c;
+        color: #0f0917;
+        font-size: 0.56rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .promo-1x-hl { color: #8aff3c; font-weight: 800; }
+      .promo-1x-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        flex-shrink: 0;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        background: #8aff3c;
+        color: #0f0917;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        box-shadow: 0 4px 16px rgba(138, 255, 60, 0.45);
+      }
+      .promo-1x-cta svg { width: 1rem; height: 1rem; transition: transform 0.2s; }
+      .promo-1x:hover .promo-1x-cta svg { transform: translate(2px, -2px); }
+      @keyframes promoPulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(138, 255, 60, 0.45), 0 8px 30px rgba(138, 255, 60, 0.18); }
+        50% { box-shadow: 0 0 0 8px rgba(138, 255, 60, 0), 0 8px 34px rgba(138, 255, 60, 0.3); }
+      }
+      @keyframes promoShine {
+        0%, 55% { left: -60%; }
+        100% { left: 130%; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .promo-1x, .promo-1x::after { animation: none; }
+      }
 
       /* Portada compacta en celular: que se vea hasta el bono al cargar */
       @media (max-width: 639px) {
@@ -90,7 +147,10 @@
         #pick .hero-cta .btn { min-height: 42px !important; padding-top: 0.4rem !important; padding-bottom: 0.4rem !important; }
         #pick .hero-chips { margin-top: 0.7rem !important; }
         #pick .hero-promo { margin-top: 0.7rem !important; }
-        #pick .hero-promo .promo-1x { padding: 0.55rem 0.7rem; gap: 0.65rem; }
+        #pick .hero-promo .promo-1x { padding: 0.65rem 0.7rem; gap: 0.6rem; }
+        #pick .promo-1x-tag { font-size: 0.5rem; padding: 0.1rem 0.4rem; margin-bottom: 0.25rem; }
+        #pick .promo-1x-cta { width: 36px; height: 36px; padding: 0; }
+        #pick .promo-1x-cta-label { display: none; }
         #pick .hero-promo .promo-1x img { height: 36px; max-width: 72px; }
         #pick .promo-1x-text { font-size: 0.76rem !important; line-height: 1.2rem !important; margin-top: 0.1rem !important; }
         #pick .hero-promo > p { margin-top: 0.35rem !important; font-size: 0.56rem !important; line-height: 0.85rem !important; }
@@ -378,10 +438,13 @@
                 >
                   <img src="logo/1x.png" alt="1xBet" />
                   <span class="min-w-0 flex-1">
-                    <span class="block text-[0.58rem] font-extrabold uppercase tracking-[0.16em] text-lime">Bono de bienvenida</span>
-                    <span class="promo-1x-text mt-1 block text-[0.82rem] font-bold leading-5 text-cream">Regístrate y obtén un bono del 100% en la cantidad de tu primera recarga</span>
+                    <span class="promo-1x-tag">Bono de bienvenida</span>
+                    <span class="promo-1x-text block text-[0.82rem] font-bold leading-5 text-cream">Regístrate y obtén un <strong class="promo-1x-hl">bono del 100%</strong> en la cantidad de tu primera recarga</span>
                   </span>
-                  <svg class="h-5 w-5 shrink-0 text-lime" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg>
+                  <span class="promo-1x-cta" aria-hidden="true">
+                    <span class="promo-1x-cta-label">Reclamar</span>
+                    <svg><use href="#icon-arrow-up-right"></use></svg>
+                  </span>
                 </a>
                 <p class="mt-2 text-[0.6rem] leading-4 text-smoke">+18 · Publicidad. Aplican términos y condiciones de 1xBet. Juega con responsabilidad.</p>
               </div>
