@@ -1,0 +1,517 @@
+@font-face {
+  font-family: "Manrope Variable";
+  src: url("../fonts/manrope-latin-wght-normal.woff2") format("woff2-variations");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../fonts/barlow-condensed-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../fonts/barlow-condensed-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../fonts/barlow-condensed-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../fonts/barlow-condensed-latin-800-normal.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    @apply bg-ink font-sans text-cream antialiased;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(circle at 100% 0%, rgba(192, 132, 252, 0.09), transparent 28rem),
+      radial-gradient(circle at 0% 42%, rgba(138, 255, 60, 0.035), transparent 32rem);
+    background-attachment: fixed;
+  }
+
+  body::after {
+    position: fixed;
+    inset: 0;
+    z-index: 70;
+    pointer-events: none;
+    content: "";
+    opacity: 0.028;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+  }
+
+  ::selection {
+    @apply bg-lime text-ink;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.lime");
+    outline-offset: 4px;
+  }
+
+  summary {
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  a,
+  button,
+  summary {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 font-sans text-[0.67rem] font-bold uppercase tracking-[0.2em] text-smoke;
+  }
+
+  .eyebrow-line {
+    @apply inline-block h-px w-7 bg-lime;
+  }
+
+  .section-title {
+    @apply font-display text-[clamp(2.8rem,7vw,5.8rem)] font-semibold uppercase leading-[0.88] tracking-[-0.035em];
+  }
+
+  .display-xl {
+    @apply font-display text-[clamp(4.2rem,11.5vw,8.7rem)] font-semibold uppercase leading-[0.79] tracking-[-0.045em];
+  }
+
+  .text-outline {
+    color: theme("colors.violet");
+  }
+
+  @supports (-webkit-text-stroke: 1px black) {
+    .text-outline {
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(192, 132, 252, 0.82);
+    }
+  }
+
+  .btn {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-5 text-[0.78rem] font-extrabold uppercase tracking-[0.12em] transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-4 focus-visible:ring-offset-ink;
+  }
+
+  .btn svg {
+    @apply h-4 w-4 shrink-0;
+  }
+
+  .btn-lime {
+    @apply bg-lime text-ink hover:-translate-y-0.5 hover:bg-cream hover:shadow-lime;
+  }
+
+  .btn-ink {
+    @apply bg-ink text-cream hover:-translate-y-0.5 hover:bg-panel-soft;
+  }
+
+  .btn-outline {
+    @apply border border-white/15 bg-white/[0.03] text-cream hover:-translate-y-0.5 hover:border-lime/50 hover:bg-white/[0.06] hover:text-lime;
+  }
+
+  .btn-sm {
+    @apply min-h-[42px] px-4 text-[0.71rem];
+  }
+
+  .icon-btn {
+    @apply inline-grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/[0.03] text-cream transition duration-300 hover:-translate-y-0.5 hover:border-lime/60 hover:bg-lime hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-4 focus-visible:ring-offset-ink;
+  }
+
+  .icon-btn svg {
+    @apply h-[1.15rem] w-[1.15rem];
+  }
+
+  .social-chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-3.5 py-2 text-[0.72rem] font-semibold text-cream/80 transition duration-300 hover:-translate-y-0.5 hover:border-lime/40 hover:text-lime;
+  }
+
+  .social-chip svg {
+    @apply h-4 w-4;
+  }
+
+  .nav-link {
+    @apply relative flex min-h-[42px] items-center text-[0.78rem] font-semibold text-cream/65 transition-colors hover:text-cream;
+  }
+
+  .nav-link::after {
+    @apply absolute bottom-1 left-0 h-px w-0 bg-lime transition-all duration-300;
+    content: "";
+  }
+
+  .nav-link:hover::after,
+  .nav-link.is-active::after {
+    @apply w-full;
+  }
+
+  .nav-link.is-active {
+    @apply text-lime;
+  }
+
+  .pitch-grid {
+    background-image:
+      linear-gradient(rgba(192, 132, 252, 0.065) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(192, 132, 252, 0.065) 1px, transparent 1px);
+    background-size: 68px 68px;
+    mask-image: linear-gradient(to bottom, black 0%, black 58%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 58%, transparent 100%);
+  }
+
+  .hero-glow {
+    background:
+      radial-gradient(circle at 62% 42%, rgba(192, 132, 252, 0.2) 0%, rgba(124, 58, 237, 0.05) 40%, transparent 68%),
+      radial-gradient(circle at 35% 55%, rgba(138, 255, 60, 0.12) 0%, transparent 54%);
+  }
+
+  .stadium-arc {
+    border: 1px solid rgba(192, 132, 252, 0.14);
+    border-radius: 50%;
+  }
+
+  .ticket {
+    @apply relative rounded-[1.35rem] bg-cream text-ink shadow-ticket;
+  }
+
+  .ticket-seam {
+    @apply relative h-8;
+  }
+
+  .ticket-seam::before {
+    @apply absolute left-5 right-5 top-1/2 border-t border-dashed border-ink/25;
+    content: "";
+  }
+
+  .ticket-notch {
+    @apply absolute top-1/2 h-7 w-7 -translate-y-1/2 rounded-full bg-ink;
+  }
+
+  .ticket-notch-left {
+    left: -14px;
+  }
+
+  .ticket-notch-right {
+    right: -14px;
+  }
+
+  .pick-panel {
+    background:
+      radial-gradient(circle at 100% 0%, rgba(138, 255, 60, 0.16), transparent 34%),
+      radial-gradient(circle at 0% 100%, rgba(192, 132, 252, 0.2), transparent 46%),
+      theme("colors.ink");
+  }
+
+  .condition-card {
+    @apply flex min-h-[76px] items-start gap-2.5 rounded-xl border border-ink/[0.08] bg-white/55 p-3;
+  }
+
+  .condition-icon {
+    @apply mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-ink text-lime;
+  }
+
+  .condition-icon svg {
+    @apply h-3.5 w-3.5;
+  }
+
+  .team-crest {
+    @apply relative grid h-16 w-16 place-items-center rounded-2xl border border-black/10 text-cream shadow-sm;
+  }
+
+  .team-crest::after {
+    position: absolute;
+    inset: 5px;
+    content: "";
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 0.65rem;
+  }
+
+  .team-crest span {
+    @apply relative z-10 font-display text-xl font-bold tracking-[0.04em];
+  }
+
+  .barcode {
+    height: 34px;
+    background: repeating-linear-gradient(
+      90deg,
+      theme("colors.ink") 0 2px,
+      transparent 2px 5px,
+      theme("colors.ink") 5px 6px,
+      transparent 6px 9px,
+      theme("colors.ink") 9px 12px,
+      transparent 12px 15px
+    );
+    opacity: 0.72;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 34s linear infinite;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  .ticker-item {
+    @apply flex shrink-0 items-center gap-5 px-5 font-display text-sm font-semibold uppercase tracking-[0.14em] sm:px-7;
+  }
+
+  .ticker-dot {
+    @apply h-1.5 w-1.5 rounded-full bg-ink/45;
+  }
+
+  .feature-card {
+    @apply rounded-2xl border border-white/10 bg-panel/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-lime/25 hover:bg-panel;
+  }
+
+  .step-number {
+    @apply font-display text-[4.6rem] font-semibold leading-none tracking-[-0.04em] text-ink/15;
+  }
+
+  .social-tile {
+    @apply relative flex min-h-[154px] flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-panel p-5 transition duration-300 hover:-translate-y-1 hover:border-lime/35;
+  }
+
+  .social-tile::after {
+    position: absolute;
+    right: -50px;
+    bottom: -65px;
+    width: 150px;
+    height: 150px;
+    content: "";
+    border: 1px solid rgba(192, 132, 252, 0.14);
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+  }
+
+  .social-tile:hover::after {
+    transform: scale(1.25);
+  }
+
+  .social-tile-featured {
+    @apply bg-lime text-ink hover:border-lime hover:bg-cream;
+  }
+
+  .social-tile-featured::after {
+    border-color: rgba(9, 11, 8, 0.12);
+  }
+
+  .sport-card {
+    @apply relative flex min-h-[310px] flex-col justify-between overflow-hidden rounded-2xl border border-white/10 p-5 transition duration-300;
+    background:
+      radial-gradient(circle at 78% 30%, var(--sport-glow, rgba(192, 132, 252, 0.18)), transparent 58%),
+      theme("colors.panel");
+  }
+
+  .sport-card::before {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    content: "";
+    background: linear-gradient(180deg, transparent 42%, rgba(15, 9, 23, 0.64) 100%);
+    pointer-events: none;
+  }
+
+  .sport-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--sport-border, rgba(192, 132, 252, 0.45));
+  }
+
+  .sport-card-top,
+  .sport-card-bottom {
+    position: relative;
+    z-index: 2;
+  }
+
+  .sport-card-top {
+    @apply flex items-center justify-between gap-3;
+  }
+
+  .sport-index {
+    @apply font-display text-sm font-semibold tracking-[0.12em] text-cream/55;
+  }
+
+  .sport-category {
+    @apply rounded-full border px-2.5 py-1 text-[0.55rem] font-extrabold uppercase tracking-[0.14em];
+    border-color: var(--sport-border, rgba(192, 132, 252, 0.45));
+    color: var(--sport-accent, theme("colors.violet"));
+    background: rgba(15, 9, 23, 0.72);
+    backdrop-filter: blur(6px);
+  }
+
+  .sport-ball {
+    position: absolute;
+    right: -26px;
+    top: 32px;
+    z-index: 0;
+    width: 195px;
+    height: 195px;
+    filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.4));
+    transform: rotate(-12deg);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .sport-card:hover .sport-ball {
+    transform: rotate(-3deg) scale(1.06);
+  }
+
+  @media (max-width: 640px) {
+    .sport-ball {
+      right: -34px;
+      top: 24px;
+      width: 188px;
+      height: 188px;
+    }
+  }
+
+  .sport-card-bottom {
+    @apply mt-auto;
+  }
+
+  .sport-card-title {
+    @apply font-display text-[2.45rem] font-semibold uppercase leading-none tracking-[-0.01em] text-cream;
+  }
+
+  .sport-card-markets {
+    @apply mt-2 text-[0.67rem] font-semibold leading-5 text-smoke;
+  }
+
+  .sport-card-line {
+    @apply mb-3 h-px w-10;
+    background: var(--sport-accent, theme("colors.violet"));
+  }
+
+  .faq-item {
+    @apply border-b border-white/10;
+  }
+
+  .faq-item summary {
+    @apply flex min-h-[76px] cursor-pointer items-center justify-between gap-5 py-5 text-left text-[0.98rem] font-bold text-cream transition-colors hover:text-lime;
+  }
+
+  .faq-plus {
+    @apply grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/15 text-cream transition duration-300;
+  }
+
+  .faq-item[open] .faq-plus {
+    @apply rotate-45 border-lime bg-lime text-ink;
+  }
+
+  .faq-answer {
+    @apply max-w-2xl pb-6 pr-10 text-sm leading-7 text-smoke;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .countdown-box {
+    @apply rounded-xl border border-white/10 bg-white/[0.035] px-4 py-3 text-center;
+  }
+
+  .toast {
+    @apply pointer-events-none fixed bottom-5 left-1/2 z-[80] flex -translate-x-1/2 translate-y-4 items-center gap-2 rounded-full bg-cream px-5 py-3 text-xs font-bold text-ink opacity-0 shadow-2xl transition duration-300;
+  }
+
+  .toast.is-visible {
+    @apply translate-y-0 opacity-100;
+  }
+
+  .toast svg {
+    @apply h-4 w-4 text-ink;
+  }
+}
+
+@media (max-width: 640px) {
+  .ticket {
+    border-radius: 1.1rem;
+  }
+
+  .ticket-notch {
+    height: 1.4rem;
+    width: 1.4rem;
+  }
+
+  .ticket-notch-left {
+    left: -0.7rem;
+  }
+
+  .ticket-notch-right {
+    right: -0.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
